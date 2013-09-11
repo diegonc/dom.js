@@ -2,8 +2,7 @@
  * Module dependencies
  */
 
-var parser = require('gumbo-parser'),
-    Document = require('./lib/document'),
+var Document = require('./lib/document'),
     Window = require('./lib/window'),
     parser = require('./lib/parser');
 
