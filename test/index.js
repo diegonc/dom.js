@@ -111,6 +111,17 @@ describe('document', function(){
 
 });
 
+
+describe('serialize', function(){
+
+  it('should serialize document', function(){
+    var html = '<!DOCTYPE html><html></html>';
+    var d = dom(html);
+
+    assert(d.outerHTML === html);
+
+});
+
 describe('element', function(){
 
   it('should createElement', function(){
