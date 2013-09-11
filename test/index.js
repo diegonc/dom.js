@@ -11,7 +11,9 @@ describe('dom', function(){
   });
 
   it('should return a document and window instance', function(){
-
+    var d = dom('<html></html>');
+    assert(d.document instanceof Document);
+    assert(d.window instanceof Window);
   });
 
 });
