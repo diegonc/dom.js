@@ -18,9 +18,9 @@ describe('dom', function(){
     assert(d.window instanceof Window);
   });
 
-  it('should store the parsed tree within the document', function(){
+  it('should store the parsed documentElement within the document', function(){
     var d = dom('<html></html>');
-    assert(d.document.tree);
+    assert(d.document.documentElement);
   });
 
   it('should store the document within the window', function(){
