@@ -8,6 +8,7 @@ var Document = require('./lib/document'),
     Tree = require('./lib/tree'),
     parser = require('./lib/parser'),
     Element = require('./lib/element'),
+    Text = require('./lib/text'),
     Attribute = require('./lib/attribute');
 
 /**
@@ -33,6 +34,12 @@ exports.Attribute = Attribute;
  */
 
 exports.Element = Element;
+
+/**
+ * Expose `Text`
+ */
+
+exports.Text = Text;
 
 /**
  * Expose `Document`

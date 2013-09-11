@@ -5,6 +5,7 @@ var dom = require('..'),
     Node = dom.Node,
     Tree = dom.Tree,
     Element = dom.Element,
+    Text = dom.Text,
     Attribute = dom.Attribute;
 
 
@@ -183,6 +184,18 @@ describe('element', function(){
     var clone = elem.cloneNode(true);
     assert(1 === clone.childNodes.length);
     assert(clone === clone.childNodes[0].parentNode);
+  });
+
+});
+
+describe('text', function(){
+
+  it('should create text node', function(){
+    var document = dom('<html><body><div id="hello">world</div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(1 === elem.childNodes.length);
+    assert(elem.childNodes[0] instanceof Text);
+    assert('world' === elem.childNodes[0].nodeValue);
   });
 
 });
