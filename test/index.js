@@ -5,6 +5,7 @@ var dom = require('..'),
     Node = dom.Node,
     Tree = dom.Tree,
     Element = dom.Element,
+    Text = dom.Text,
     Attribute = dom.Attribute;
 
 
@@ -183,6 +184,63 @@ describe('element', function(){
     var clone = elem.cloneNode(true);
     assert(1 === clone.childNodes.length);
     assert(clone === clone.childNodes[0].parentNode);
+  });
+
+  it('should get innerHTML', function(){
+    var document = dom('<html><body><div id="hello"><div>world</div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(elem.innerHTML === '<div>world</div>');
+  });
+
+  it('should get outerHTML', function(){
+    var document = dom('<html><body><div id="hello"><div>world</div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(elem.outerHTML === '<div id="hello"><div>world</div></div>');
+  });
+
+  it('should getAttribute', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert('hello' === elem.getAttribute('id'));
+  });
+
+  it('should setAttribute', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    elem.setAttribute('id', 'foo');
+    assert('foo' === elem.getAttribute('id'));
+    elem.setAttribute('title', 'Foo');
+    assert('Foo' === elem.getAttribute('title'));
+  });
+
+});
+
+describe('text', function(){
+
+  it('should create text node from string', function(){
+    var document = dom('<html><body><div id="hello">world</div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(1 === elem.childNodes.length);
+    assert(elem.childNodes[0] instanceof Text);
+    assert('world' === elem.childNodes[0].nodeValue);
+  });
+
+  it('should createTextNode', function(){
+    var document = dom('<html><body></body></html>').document;
+    var elem = document.createTextNode('hello world');
+    assert(elem instanceof Text);
+    assert('hello world' === elem.nodeValue);
+  });
+
+  it('should set textContent', function(){
+    var document = dom('<html><body><div id="hello"><div></div><div></div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert('' === elem.textContent);
+    assert(2 === elem.childNodes.length);
+    elem.textContent = 'world';
+    assert('world' === elem.textContent);
+    assert(1 === elem.childNodes.length);
+    assert(3 === elem.childNodes[0].nodeType);
   });
 
 });
