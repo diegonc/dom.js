@@ -139,4 +139,15 @@ describe('element', function(){
     assert(undefined === elem.parentNode);
   });
 
+  it('should replaceChild', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    var newElem = document.createElement('span');
+    assert(1 === document.body.childNodes.length);
+    document.body.replaceChild(newElem, elem);
+    assert(1 === document.body.childNodes.length);
+    assert(undefined === elem.parentNode);
+    assert(document.body === newElem.parentNode);
+  });
+
 });
