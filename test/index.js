@@ -119,6 +119,7 @@ describe('serialize', function(){
     var d = dom(html);
 
     assert(d.outerHTML === html);
+  });
 
 });
 
