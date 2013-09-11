@@ -177,4 +177,12 @@ describe('element', function(){
     assert(0 === newIndex);
   });
 
+  it('should clone', function(){
+    var document = dom('<html><body><div id="hello"><div></div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    var clone = elem.cloneNode(true);
+    assert(1 === clone.childNodes.length);
+    assert(clone === clone.childNodes[0].parentNode);
+  });
+
 });
