@@ -186,6 +186,19 @@ describe('element', function(){
     assert(clone === clone.childNodes[0].parentNode);
   });
 
+  it('should get innerHTML', function(){
+    var document = dom('<html><body><div id="hello"><div>world</div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(elem.innerHTML === '<div>world</div>');
+  });
+
+  it('should get outerHTML', function(){
+    var document = dom('<html><body><div id="hello"><div>world</div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    console.log(elem.outerHTML)
+    assert(elem.outerHTML === '<div id="hello"><div>world</div></div>');
+  });
+
 });
 
 describe('text', function(){
