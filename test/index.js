@@ -198,4 +198,15 @@ describe('text', function(){
     assert('world' === elem.childNodes[0].nodeValue);
   });
 
+  it('should set textContent', function(){
+    var document = dom('<html><body><div id="hello"><div></div><div></div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert('' === elem.textContent);
+    assert(2 === elem.childNodes.length);
+    elem.textContent = 'world';
+    assert('world' === elem.textContent);
+    assert(1 === elem.childNodes.length);
+    assert(3 === elem.childNodes[0].nodeType);
+  });
+
 });
