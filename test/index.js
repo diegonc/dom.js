@@ -4,7 +4,8 @@ var dom = require('..'),
     Document = dom.Document,
     Node = dom.Node,
     Tree = dom.Tree,
-    Element = dom.Element;
+    Element = dom.Element,
+    Attribute = dom.Attribute;
 
 
 describe('dom', function(){
@@ -49,6 +50,35 @@ describe('tree', function(){
     assert(d.document.childNodes[0].childNodes.length === 2);
     assert(d.document.childNodes[0].childNodes[0].tagName === "body");
     assert(d.document.childNodes[0].childNodes[1].tagName === "head");
+  });
+
+  it('should return a single attribute object', function(){
+    var d = dom('<html><body><div id="hello"></div></body></html>');
+    assert(d.document
+      .childNodes[0]
+      .childNodes[0]
+      .childNodes[0]
+      .attributes
+      .length === 1
+    );
+    assert(d.document
+      .childNodes[0]
+      .childNodes[0]
+      .childNodes[0]
+      .attributes[0] instanceof Attribute
+    );
+    assert(d.document
+      .childNodes[0]
+      .childNodes[0]
+      .childNodes[0]
+      .attributes[0].name === "id"
+    );
+    assert(d.document
+      .childNodes[0]
+      .childNodes[0]
+      .childNodes[0]
+      .attributes[0].value === "hello"
+    );
   });
 
   it('should parse deep nodes', function(){
