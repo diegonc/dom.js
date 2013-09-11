@@ -1,3 +1,5 @@
 var dom = require('..');
 
-var d = dom('<!DOCTYPE html><html data-text="hello"></html>');
+var d = dom('<!DOCTYPE html><html><div><span></span><span></span></div><div></div></html>');
+
+console.log(d.document.outerHTML);
