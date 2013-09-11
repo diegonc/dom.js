@@ -190,12 +190,19 @@ describe('element', function(){
 
 describe('text', function(){
 
-  it('should create text node', function(){
+  it('should create text node from string', function(){
     var document = dom('<html><body><div id="hello">world</div></body></html>').document;
     var elem = document.getElementById('hello');
     assert(1 === elem.childNodes.length);
     assert(elem.childNodes[0] instanceof Text);
     assert('world' === elem.childNodes[0].nodeValue);
+  });
+
+  it('should createTextNode', function(){
+    var document = dom('<html><body></body></html>').document;
+    var elem = document.createTextNode('hello world');
+    assert(elem instanceof Text);
+    assert('hello world' === elem.nodeValue);
   });
 
   it('should set textContent', function(){
