@@ -1,6 +1,6 @@
 # Tower Server DOM
 
-A DOM implementation for Node.js using Google's Gumbo (HTML5 C Parser).
+A DOM implementation for Node.js using Google's Gumbo (HTML5 Parser written in C).
 
 ### Initial Requirements
 
