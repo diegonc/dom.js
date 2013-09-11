@@ -137,8 +137,44 @@ describe('element', function(){
     assert(1 === document.body.childNodes.length);
     document.body.appendChild(elem);
     assert(2 === document.body.childNodes.length);
+    assert(elem.parentNode === document.body);
     document.body.appendChild(elem);
     assert(2 === document.body.childNodes.length);
+  });
+
+  it('should removeChild', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(1 === document.body.childNodes.length);
+    document.body.removeChild(elem);
+    assert(0 === document.body.childNodes.length);
+    assert(undefined === elem.parentNode);
+  });
+
+  it('should replaceChild', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    var newElem = document.createElement('span');
+    assert(1 === document.body.childNodes.length);
+    document.body.replaceChild(newElem, elem);
+    assert(1 === document.body.childNodes.length);
+    assert(undefined === elem.parentNode);
+    assert(document.body === newElem.parentNode);
+  });
+
+  it('should insertBefore', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    var newElem = document.createElement('span');
+    assert(1 === document.body.childNodes.length);
+    document.body.insertBefore(newElem, elem);
+    assert(2 === document.body.childNodes.length);
+    assert(document.body === elem.parentNode);
+    assert(document.body === newElem.parentNode);
+    var refIndex = document.body.childNodes.indexOf(elem);
+    var newIndex = document.body.childNodes.indexOf(newElem);
+    assert(1 === refIndex);
+    assert(0 === newIndex);
   });
 
 });
