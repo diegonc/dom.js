@@ -119,6 +119,15 @@ describe('serialize', function(){
     var d = dom(html);
 
     assert(d.outerHTML === html);
+
+});
+
+describe('element', function(){
+
+  it('should createElement', function(){
+    var d = dom('<html></html>');
+    var elem = d.document.createElement('div');
+    assert('div' === elem.tagName);
   });
 
 });
