@@ -110,3 +110,13 @@ describe('document', function(){
   });
 
 });
+
+describe('element', function(){
+
+  it('should createElement', function(){
+    var d = dom('<html></html>');
+    var elem = d.document.createElement('div');
+    assert('div' === elem.tagName);
+  });
+
+});
