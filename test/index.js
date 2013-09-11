@@ -1,7 +1,9 @@
 var dom = require('..'),
     assert = require('assert'),
     Window = dom.Window,
-    Document = dom.Document;
+    Document = dom.Document,
+    Node = dom.Node,
+    Tree = dom.Tree;
 
 
 describe('dom', function(){

@@ -4,6 +4,8 @@
 
 var Document = require('./lib/document'),
     Window = require('./lib/window'),
+    Node = require('./lib/node'),
+    Tree = require('./lib/tree'),
     parser = require('./lib/parser');
 
 /**
@@ -23,6 +25,18 @@ exports.Window = Window;
  */
 
 exports.Document = Document;
+
+/**
+ * Expose `Tree`
+ */
+
+exports.Tree = Tree;
+
+/**
+ * Expose `Node`
+ */
+
+exports.Node = Node;
 
 /**
  * Init Function
