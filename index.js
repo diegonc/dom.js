@@ -60,7 +60,7 @@ exports.Node = Node;
 
 function init(html, options) {
   if (!options) options = {};
-  if (!html) html = '';
+  if (!html) html = '<!DOCTYPE html><html></html>';
 
   return parser(html, options);
 }
