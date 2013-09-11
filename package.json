@@ -14,6 +14,16 @@
     "parser"
   ],
   "author": "Daniel Fagnan <dnfagnan@gmail.com>",
+  "contributors": [
+    {
+      "name": "Daniel Fagnan",
+      "email": "dnfagnan@gmail.com"
+    },
+    {
+      "name": "Lance Pollard",
+      "email": "lancejpollard@gmail.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "gumbo-parser": "~0.1.3"
