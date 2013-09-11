@@ -13,6 +13,18 @@ var Document = require('./lib/document'),
 exports = module.exports = init;
 
 /**
+ * Expose `Window`
+ */
+
+exports.Window = Window;
+
+/**
+ * Expose `Document`
+ */
+
+exports.Document = Document;
+
+/**
  * Init Function
  *
  * This parses the initial HTML input and returns the
