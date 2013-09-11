@@ -125,8 +125,18 @@ describe('element', function(){
     assert(1 === document.body.childNodes.length);
     document.body.appendChild(elem);
     assert(2 === document.body.childNodes.length);
+    assert(elem.parentNode === document.body);
     document.body.appendChild(elem);
     assert(2 === document.body.childNodes.length);
+  });
+
+  it('should removeChild', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(1 === document.body.childNodes.length);
+    document.body.removeChild(elem);
+    assert(0 === document.body.childNodes.length);
+    assert(undefined === elem.parentNode);
   });
 
 });
