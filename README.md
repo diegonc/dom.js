@@ -28,19 +28,19 @@ npm install tower-server-dom
 
 ```js
 var dom = require('tower-server-dom');
-var assert = require('assert');
-
-var document = dom('<html><body><div id="hello"></div></body></html>').document;
-
-assert(document instanceof dom.Document);
-assert(document.getElementById("hello") instanceof dom.Element);
-assert(document.getElementById("hello").parentNode.tagName === "div");
-
 ```
 
 ### API
 
+#### Dom([String] html)
 
+This is the entry point to the module. This will parse the `html` input using Gumbo and convert it to a mutable DOM.
+
+**Note:** This is an HTML__5__ parser.
+
+```js
+dom('<html></html>');
+```
 
 ### Test
 
