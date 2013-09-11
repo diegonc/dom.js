@@ -119,4 +119,14 @@ describe('element', function(){
     assert('div' === elem.tagName);
   });
 
+  it('should appendChild', function(){
+    var document = dom('<html><body><div id="hello"></div></body></html>').document;
+    var elem = document.createElement('div');
+    assert(1 === document.body.childNodes.length);
+    document.body.appendChild(elem);
+    assert(2 === document.body.childNodes.length);
+    document.body.appendChild(elem);
+    assert(2 === document.body.childNodes.length);
+  });
+
 });
