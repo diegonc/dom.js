@@ -28,11 +28,19 @@ npm install tower-server-dom
 
 ```js
 var dom = require('tower-server-dom');
+var assert = require('assert');
 
-var d = dom('<html><body><div id="hello"></div></body></html>');
-d.window.getElementById("hello"); // Node instance
-d.document // Document instance
+var document = dom('<html><body><div id="hello"></div></body></html>').document;
+
+assert(document instanceof dom.Document);
+assert(document.getElementById("hello") instanceof dom.Element);
+assert(document.getElementById("hello").parentNode.tagName === "div");
+
 ```
+
+### API
+
+
 
 ### Test
 
