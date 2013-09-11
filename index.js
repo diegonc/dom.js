@@ -4,7 +4,8 @@
 
 var parser = require('gumbo-parser'),
     Document = require('./lib/document'),
-    Window = require('./lib/window');
+    Window = require('./lib/window'),
+    parser = require('./lib/parser');
 
 /**
  * Module exports
@@ -19,3 +20,7 @@ exports = module.exports = init;
  * appropriate `document` and `window` object.
  *
  */
+
+function init(html, options) {
+
+}
