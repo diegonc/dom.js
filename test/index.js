@@ -88,3 +88,25 @@ describe('tree', function(){
   });
 
 });
+
+describe('document', function(){
+
+  it('should get single element with `getElementsByTagName`', function(){
+    var d = dom('<html><div></div></html>');
+    var elems = d.document.getElementsByTagName('div');
+    assert(elems.length === 1);
+    assert(elems[0] instanceof Element);
+    assert(elems[0].tagName === "div");
+  });
+
+  it('should get single element with `getElementById`', function(){
+    var d = dom('<html><div id="hello"></div></html>');
+    var elem = d.document.getElementById('hello');
+    assert(elem instanceof Element);
+    assert(elem.attributes.length === 0);
+    assert(elem.attributes[0] instanceof Attribute);
+    assert(elem.attributes[0].name === "id");
+    assert(elem.attributes[0].value === "hello");
+  });
+
+});
