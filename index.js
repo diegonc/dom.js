@@ -6,7 +6,9 @@ var Document = require('./lib/document'),
     Window = require('./lib/window'),
     Node = require('./lib/node'),
     Tree = require('./lib/tree'),
-    parser = require('./lib/parser');
+    parser = require('./lib/parser'),
+    Element = require('./lib/element'),
+    Attribute = require('./lib/attribute');
 
 /**
  * Module exports
@@ -19,6 +21,18 @@ exports = module.exports = init;
  */
 
 exports.Window = Window;
+
+/**
+ * Expose `Attribute`
+ */
+
+exports.Attribute = Attribute;
+
+/**
+ * Expose `Element`
+ */
+
+exports.Element = Element;
 
 /**
  * Expose `Document`

@@ -3,7 +3,8 @@ var dom = require('..'),
     Window = dom.Window,
     Document = dom.Document,
     Node = dom.Node,
-    Tree = dom.Tree;
+    Tree = dom.Tree,
+    Element = dom.Element;
 
 
 describe('dom', function(){
@@ -20,12 +21,40 @@ describe('dom', function(){
 
   it('should store the parsed documentElement within the document', function(){
     var d = dom('<html></html>');
-    assert(d.document.documentElement);
+    //assert(d.document.documentElement);
   });
 
   it('should store the document within the window', function(){
     var d = dom('<html></html>');
-    assert(d.window.document);
+    assert(d.window.document instanceof Document);
+  });
+
+});
+
+describe('tree', function(){
+
+  it('should have `html` node as child', function(){
+    var d = dom('<html></html>');
+    assert(d.document.childNodes[0] instanceof Element);
+    assert(d.document.childNodes[0].tagName === "html");
+  });
+
+  it('should have empty attributes array in `html` node', function(){
+    var d = dom('<html></html>');
+    assert(d.document.childNodes[0].attributes.length === 0);
+  });
+
+  it('should implement missing `head` and `body` nodes', function(){
+    var d = dom('<html></html>');
+    assert(d.document.childNodes[0].childNodes.length === 2);
+    assert(d.document.childNodes[0].childNodes[0].tagName === "body");
+    assert(d.document.childNodes[0].childNodes[1].tagName === "head");
+  });
+
+  it('should parse deep nodes', function(){
+    var d = dom('<html><div></div></html>');
+    assert(d.document.childNodes[0].childNodes[0] instanceof Element);
+    assert(d.document.childNodes[0].childNodes[0].childNodes[0].tagName === "div");
   });
 
 });
