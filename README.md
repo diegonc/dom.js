@@ -36,7 +36,7 @@ var dom = require('tower-server-dom');
 
 This is the entry point to the module. This will parse the `html` input using Gumbo and convert it to a mutable DOM.
 
-**Note:** This is an HTML__5__ parser.
+**Note:** This is an __HTML5__ parser.
 
 ```js
 dom('<html></html>');

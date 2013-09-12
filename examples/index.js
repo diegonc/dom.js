@@ -1,3 +1,3 @@
 var dom = require('..');
 
-var d = dom('<!DOCTYPE html><html><div class="hello world" id="world"><span></span><a></a></div><div></div></html>');
+var d = dom('<!DOCTYPE html><html><h1></h1><span></span></html>');

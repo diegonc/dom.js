@@ -132,6 +132,11 @@ describe('element', function(){
     assert('div' === elem.tagName);
   });
 
+  it('should have textContent', function(){
+    var d = dom('<html><div></div></html>');
+    assert(d.document.childNodes[0].childNodes[1].childNodes[0].textContent == "");
+  });
+
   it('should appendChild', function(){
     var document = dom('<html><body><div id="hello"></div></body></html>').document;
     var elem = document.createElement('div');
