@@ -72,7 +72,6 @@ Returns an object containing `document` and `window` properties.
 dom('<html></html>', {}); // options are currently not used.
 ```
 
-
 ## Issues
 
 The goal of this module is to be 100% spec compliant. However, it's not there yet. If you have any bugs either send a pull request, or simply open a new issue.

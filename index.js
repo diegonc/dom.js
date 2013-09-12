@@ -15,7 +15,7 @@ var Document = require('./lib/document'),
  * Module exports
  */
 
-exports = module.exports = init;
+exports = module.exports = dom;
 
 /**
  * Expose `Window`
@@ -60,26 +60,21 @@ exports.Tree = Tree;
 exports.Node = Node;
 
 /**
- * Init Function
+ * Parse an HTML string to a fully compliant DOM.
  *
  * This parses the initial HTML input and returns the
  * appropriate `document` and `window` object.
  *
  * Usage:
  *
- *  var dom = init('<html><body><div id="hello"></div></body></html>', {});
+ *  var dom = dom('<html><body><div id="hello"></div></body></html>');
  *
- *  // Document Instance
- *  dom.document
- *
- *  // Window Instance
- *  dom.window
- *
- *  // Find ID
- *  dom.window.getElementByID("hello"); // Returns Node
+ *  @param {String} html
+ *  @param {Object} object
+ *  @return {Object}
  */
 
-function init(html, options) {
+function dom(html, options) {
   if (!options) options = {};
   if (!html) html = '<!DOCTYPE html><html></html>';
 
