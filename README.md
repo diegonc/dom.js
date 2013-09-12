@@ -13,7 +13,7 @@ These are the initial requirements for this module.
 
 ## Future Requirements
 
-* Implement the full HTML DOM specification (including the HTML5 one)
+* Implement a fully compliant HTML5 DOM specification
 * Full test coverage
 
 ## Install
