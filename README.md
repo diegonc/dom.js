@@ -66,10 +66,12 @@ var dom = require('tower-server-dom');
 
 ### dom(html, options);
 
+Returns an object containing `document` and `window` properties.
 
 ```js
-dom('<html></html>');
+dom('<html></html>', {}); // options are currently not used.
 ```
+
 
 ## Issues
 
