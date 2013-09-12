@@ -11,7 +11,8 @@
     "implementation",
     "tower",
     "server",
-    "parser"
+    "parser",
+    "emulate"
   ],
   "author": "Daniel Fagnan <dnfagnan@gmail.com>",
   "contributors": [
@@ -28,9 +29,5 @@
   "dependencies": {
     "gumbo-parser": "~0.1.3"
   },
-  "devDependencies": {
-    "tower-template": "~0.1.0",
-    "tower-content": "~0.1.0",
-    "tower-directive": "~0.1.0"
-  }
+  "devDependencies": {}
 }

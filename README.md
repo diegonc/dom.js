@@ -2,21 +2,21 @@
 
 A DOM implementation for Node.js using Google's Gumbo (HTML5 Parser written in C).
 
-### Initial Requirements
+## Initial Requirements
 
 These are the initial requirements for this module.
 
 * Implement the basic DOM specification.
 * Solid & Simple API
-* No Memory Leaks
+* No Memory Leaks(!)
 * Somewhat fast. (As fast as you can get with JavaScript)
 
-### Future Requirements
+## Future Requirements
 
 * Implement the full HTML DOM specification (including the HTML5 one)
 * Full test coverage
 
-### Install
+## Install
 
 NPM:
 
@@ -24,31 +24,66 @@ NPM:
 npm install tower-server-dom
 ```
 
-### Usage
+## Usage
+
+Require it:
 
 ```js
 var dom = require('tower-server-dom');
 ```
 
-### API
-
-#### Dom([String] html)
-
-This is the entry point to the module. This will parse the `html` input using Gumbo and convert it to a mutable DOM.
-
-**Note:** This is an __HTML5__ parser.
+Parse some HTML:
 
 ```js
 dom('<html></html>');
 ```
 
-### Test
+Get a document object:
+
+```js
+var document = dom('<html></html>').document;
+```
+
+Get a window object:
+
+```js
+var window = dom('<html></html>').window;
+```
+
+Serialize the DOM:
+
+```js
+var document = dom('<html><div id="hello"></div></html>').document;
+var string = document.childNodes[0].outerHTML;
+```
+
+
+## API
+
+```js
+var dom = require('tower-server-dom');
+```
+
+### dom(html, options);
+
+
+```js
+dom('<html></html>');
+```
+
+## Issues
+
+The goal of this module is to be 100% spec compliant. However, it's not there yet. If you have any bugs either send a pull request, or simply open a new issue.
+
+## Testing
+
+We use mocha for all the tests.
 
 ```
 mocha
 ```
 
-### License
+## License
 
 The MIT License (MIT)
 
