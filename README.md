@@ -6,15 +6,10 @@ A DOM implementation for Node.js using Google's Gumbo (HTML5 Parser written in C
 
 These are the initial requirements for this module.
 
-* Implement the basic DOM specification.
+* Implement the basic DOM specification (Implement more functionality as we need it).
 * Solid & Simple API
 * No Memory Leaks(!)
-* Somewhat fast. (As fast as you can get with JavaScript)
-
-## Future Requirements
-
-* Implement a fully compliant HTML5 DOM specification
-* Full test coverage
+* Fast (thanks to Gumbo)
 
 ## Install
 
