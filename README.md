@@ -71,6 +71,8 @@ dom('<html></html>', {}); // options are currently not used.
 
 The goal of this module is to be 100% spec compliant. However, it's not there yet. If you have any bugs either send a pull request, or simply open a new issue.
 
+To be clear: Gumbo is 100% compliant, but Gumbo is not intended to be a mutable DOM parser. Thus, this module is converted to a mutable tree. This module is simply missing some mutable functions that come with the DOM. The DOM tree itself is fully compliant.
+
 ## Testing
 
 We use mocha for all the tests.
