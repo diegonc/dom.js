@@ -6,7 +6,7 @@ A DOM implementation for Node.js using Google's Gumbo (HTML5 Parser written in C
 
 These are the initial requirements for this module.
 
-* Implement the basic DOM specification (Implement more functionality as we need it).
+* HTML5 specification implementation (thanks to Gumbo)
 * Solid & Simple API
 * No Memory Leaks(!)
 * Fast (thanks to Gumbo)
@@ -66,12 +66,6 @@ Returns an object containing `document` and `window` properties.
 ```js
 dom('<html></html>', {}); // options are currently not used.
 ```
-
-## Issues
-
-The goal of this module is to be 100% spec compliant. However, it's not there yet. If you have any bugs either send a pull request, or simply open a new issue.
-
-To be clear: Gumbo is 100% compliant, but Gumbo is not intended to be a mutable DOM parser. Thus, this module is converted to a mutable tree. This module is simply missing some mutable functions that come with the DOM. The DOM tree itself is fully compliant.
 
 ## Testing
 
