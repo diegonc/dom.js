@@ -1,6 +1,6 @@
 {
   "name": "tower-server-dom",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "DOM implementation for node.js",
   "main": "index.js",
   "scripts": {
