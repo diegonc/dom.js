@@ -193,6 +193,12 @@ describe('element', function(){
     assert(elem.outerHTML === '<div id="hello"><div>world</div></div>');
   });
 
+  it('should get outerHTML with self closing', function(){
+    var document = dom('<html><body><div id="hello"><input></input><div>world</div></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    assert(elem.outerHTML === '<div id="hello"><input /><div>world</div></div>');
+  });
+
   it('should getAttribute', function(){
     var document = dom('<html><body><div id="hello"></div></body></html>').document;
     var elem = document.getElementById('hello');
