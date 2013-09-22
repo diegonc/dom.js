@@ -29,5 +29,8 @@
   "dependencies": {
     "gumbo-parser": "~0.1.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tower-content": "*",
+    "tower-directive": "*"
+  }
 }

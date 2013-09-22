@@ -7,7 +7,6 @@ var dom = require('..'),
     Element = dom.Element,
     Text = dom.Text,
     Attribute = dom.Attribute,
-    template = require('tower-template'),
     content = require('tower-content'),
     directive = require('tower-directive');
 

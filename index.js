@@ -1,19 +1,20 @@
+
 /**
- * Module dependencies
+ * Module dependencies.
  */
 
-var Document = require('./lib/document'),
-    Window = require('./lib/window'),
-    Node = require('./lib/node'),
-    Tree = require('./lib/tree'),
-    parser = require('./lib/parser'),
-    Element = require('./lib/element'),
-    Text = require('./lib/text'),
-    Attribute = require('./lib/attribute'),
-    traverse = require('./lib/traverse');
+var Document = require('./lib/document');
+var Window = require('./lib/window');
+var Node = require('./lib/node');
+var Tree = require('./lib/tree');
+var parser = require('./lib/parser');
+var Element = require('./lib/element');
+var Text = require('./lib/text');
+var Attribute = require('./lib/attribute');
+var traverse = require('./lib/traverse');
 
 /**
- * Module exports
+ * Expose `dom`.
  */
 
 exports = module.exports = dom;
@@ -81,26 +82,3 @@ function dom(html, options) {
 
   return parser(html, options);
 }
-
-
-Object.defineProperty(Node.prototype, 'innerHTML', {
-  set: function(val) {
-    var body = dom(val).document.body;
-    this.childNodes.length = 0;
-    for (var i = 0; i < body.childNodes.length; i++) {
-      this.childNodes.push(body.childNodes[i]);
-    }
-  },
-  get: function() {
-    // XXX: totally basic impl
-    var val = [];
-    for (var i = 0, n = this.childNodes.length; i < n; i++) {
-      // text node
-      if (3 === this.childNodes[i].nodeType)
-        val.push(this.childNodes[i].nodeValue);
-      else // recurse, there's a better way to do it
-        val.push(this.childNodes[i].outerHTML);
-    }
-    return val.join('');
-  }
-});
