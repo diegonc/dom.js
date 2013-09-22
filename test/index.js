@@ -1,16 +1,15 @@
-var dom = require('..'),
-    assert = require('assert'),
-    Window = dom.Window,
-    Document = dom.Document,
-    Node = dom.Node,
-    Tree = dom.Tree,
-    Element = dom.Element,
-    Text = dom.Text,
-    Attribute = dom.Attribute;
 
+var dom = require('..');
+var assert = require('assert');
+var Window = dom.Window;
+var Document = dom.Document;
+var Node = dom.Node;
+var Tree = dom.Tree;
+var Element = dom.Element;
+var Text = dom.Text;
+var Attribute = dom.Attribute;
 
 describe('dom', function(){
-
   it('should return a function', function(){
     assert('function' === typeof dom);
   });
@@ -30,11 +29,9 @@ describe('dom', function(){
     var d = dom('<html></html>');
     assert(d.window.document instanceof Document);
   });
-
 });
 
 describe('tree', function(){
-
   it('should have `html` node as child', function(){
     var d = dom('<html></html>');
     assert(d.document.childNodes[0] instanceof Element);
@@ -87,11 +84,9 @@ describe('tree', function(){
     assert(d.document.childNodes[0].childNodes[1] instanceof Element);
     assert(d.document.childNodes[0].childNodes[1].childNodes[0].tagName === "div");
   });
-
 });
 
 describe('document', function(){
-
   it('should get single element with `getElementsByTagName`', function(){
     var d = dom('<html><div></div></html>');
     var elems = d.document.getElementsByTagName('div');
@@ -109,23 +104,18 @@ describe('document', function(){
     assert(elem.attributes[0].name === "id");
     assert(elem.attributes[0].value === "hello");
   });
-
 });
 
-
 describe('serialize', function(){
-
   /**it('should serialize document', function(){
     var html = '<!DOCTYPE html><html></html>';
     var d = dom(html);
 
     assert(d.outerHTML === html);
   });**/
-
 });
 
 describe('element', function(){
-
   it('should createElement', function(){
     var d = dom('<html></html>');
     var elem = d.document.createElement('div');
@@ -200,6 +190,7 @@ describe('element', function(){
   it('should get outerHTML', function(){
     var document = dom('<html><body><div id="hello"><div>world</div></div></body></html>').document;
     var elem = document.getElementById('hello');
+    console.log(elem.outerHTML)
     assert(elem.outerHTML === '<div id="hello"><div>world</div></div>');
   });
 
@@ -217,11 +208,9 @@ describe('element', function(){
     elem.setAttribute('title', 'Foo');
     assert('Foo' === elem.getAttribute('title'));
   });
-
 });
 
 describe('text', function(){
-
   it('should create text node from string', function(){
     var document = dom('<html><body><div id="hello">world</div></body></html>').document;
     var elem = document.getElementById('hello');
@@ -247,5 +236,4 @@ describe('text', function(){
     assert(1 === elem.childNodes.length);
     assert(3 === elem.childNodes[0].nodeType);
   });
-
 });
