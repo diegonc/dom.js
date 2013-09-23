@@ -8,15 +8,18 @@ var dom = require('..'),
     Text = dom.Text,
     Attribute = dom.Attribute,
     content = require('tower-content'),
-    directive = require('tower-directive');
+    directive = require('tower-directive'),
+    template = require('tower-template');
 
+require('tower-text-directive');
 describe('tower', function(){
 
   it('should parse a template', function(){
     var d = dom('<html><div id="two" data-text="hello"></div></html>');
-    var c = content('hello').init({ hello: 123 });
-    //template(d.document);
-    //console.log(d.document.getElementById("two").outerHTML);
+    var data = content('hello').init({ hello: 123 });
+    var fn = template(d.document);
+    fn(data);
+    console.log(d.document.getElementById("two").outerHTML);
   });
 
 });
