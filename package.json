@@ -27,7 +27,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "gumbo-parser": "~0.1.3"
+    "gumbo-parser": "~0.1.3",
+    "zest.js": "0.0.4"
   },
   "devDependencies": {
     "tower-content": "*",
