@@ -29,9 +29,5 @@
   "dependencies": {
     "gumbo-parser": "0.2.2",
     "zest.js": "0.0.4"
-  },
-  "devDependencies": {
-    "tower-content": "*",
-    "tower-directive": "*"
   }
 }
