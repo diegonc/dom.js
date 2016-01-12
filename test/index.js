@@ -213,6 +213,15 @@ describe('element', function(){
     elem.setAttribute('title', 'Foo');
     assert('Foo' === elem.getAttribute('title'));
   });
+
+  it('should find one descendant by tag name', function(){
+    var document = dom('<html><body><div id="hello"><span></span><b></b></div></body></html>').document;
+    var elem = document.getElementById('hello');
+    var elems = elem.getElementsByTagName("span");
+    assert(elems.length === 1);
+    assert(elems[0] instanceof Element);
+    assert(elems[0].tagName === "span");
+  });
 });
 
 describe('text', function(){
