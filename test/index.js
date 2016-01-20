@@ -104,6 +104,24 @@ describe('document', function(){
     assert(elem.attributes[0].name === "id");
     assert(elem.attributes[0].value === "hello");
   });
+
+  it('should set nodeType on createElement', function(){
+    var d = dom('<html><div id="hello"></div></html>');
+    var elem = d.document.createElement("div");
+    assert(elem.nodeType == 1);
+  });
+
+  it('should set tagName on createElement', function(){
+    var d = dom('<html><div id="hello"></div></html>');
+    var elem = d.document.createElement("div");
+    assert(elem.tagName == "div");
+  });
+
+  it('should set nodeName on createElement', function(){
+    var d = dom('<html><div id="hello"></div></html>');
+    var elem = d.document.createElement("div");
+    assert(elem.nodeName == elem.tagName);
+  });
 });
 
 describe('serialize', function(){
